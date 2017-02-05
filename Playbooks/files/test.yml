@@ -1,0 +1,13 @@
+--- # Testing the J2 Template Module
+- hosts: apacheweb:Debian
+  connection: ssh
+  user: sajj
+  sudo: yes
+  gather_facts: yes
+  vars:
+    userName: sajj
+    userPassword: password123
+    connectionType: SFTP
+  tasks:
+  - name: Install the configuration file customized for system
+    template: src=test.conf.j2 dest=/home/sajj/test.conf owner=sajj group=sajj mode=750
