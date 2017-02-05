@@ -1,0 +1,12 @@
+--- # Master Playbook Demostrating the delegateto command
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  pre_tasks: 
+  - name: Ping the Appliction Server
+    raw: ping -c 4 172.31.4.194 > /home/sajj/ansible-playbooks-practice/Playbooks/Roles/roles/ping.out
+    delegate_to: 127.0.0.1
+  roles:
+  - webservers
+  
