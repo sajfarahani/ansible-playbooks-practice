@@ -1,0 +1,10 @@
+--- # Apahce Module
+- hosts: aptserver
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Disable the Lias Module
+      apache2_module: state=absent name=alias
+

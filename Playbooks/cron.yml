@@ -1,0 +1,9 @@
+--- # CRON EXAMPLE
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Add a cron job for Sajj
+      cron: name="list files" state=absent

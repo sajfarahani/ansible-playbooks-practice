@@ -1,0 +1,10 @@
+- name: Install (Redhat/CentOs) Apache Web Server
+  yum: name=httpd state=latest
+  when: "ansible_os_family == 'RedHat' "
+  ignore_errors: yes
+- name: Install (Debian/Ubuntu) Apache Web Server
+  apt: pkg=apache2 state=latest
+  when: "ansible_os_family == 'Debian'"
+  ignore_errors: yes
+
+

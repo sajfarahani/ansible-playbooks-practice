@@ -1,0 +1,16 @@
+--- # THIS IS OUR PROMPT FOR USER PACKAGE EXAMPLE
+- hosts: apacheweb
+  user: sajj
+  connection: ssh
+  gather_facts: no
+  vars:
+    playbook_version: 0.0b
+  vars_prompt: 
+    - name: pkgtoinstall
+      prompt: Install Which Package?
+      default: telnet
+      private: no
+  tasks:
+     - name: Install the indicated package
+       yum: pkg={{ pkgtoinstall }} state=latest
+      

@@ -1,0 +1,12 @@
+--- # COMMAND PLAYBOOK EXAMPLE
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks: 
+    - name: CHECK FOR PYTHON PACKAGE
+      command: /home/sajj/testing/test.sh 
+      args: 
+        chdir: /home/sajj/testing
+

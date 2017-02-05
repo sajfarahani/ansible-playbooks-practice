@@ -1,0 +1,14 @@
+--- # STAT Module Example
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Does a file Directory in a path exist or not?
+    stat: path=/home/sajj/.ssh
+    register: p
+  - debug: msg="The Path Exists and is a directory"
+    when: p.stat.isdir is defined and p.stat.isdir
+ 
+

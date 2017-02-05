@@ -1,0 +1,12 @@
+--- # LOCALACTION DEMO
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Ping Application Server before we run our install
+      local_action: command ping -c 4 sajjfarahani2.mylabserver.com
+      ignore_errors: yes
+    - name: Install lynx on remote server
+      yum: pkg=lynx state=latest

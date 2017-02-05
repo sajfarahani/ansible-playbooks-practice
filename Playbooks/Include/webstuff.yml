@@ -1,0 +1,12 @@
+--- # Web Playbook
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  vars_files:
+  - variables/variables.yml
+  tasks:
+  - include: packages/packages.yml
+  - include: commands/commands.yml
+  handlers:
+  - include: handler/handler.yml

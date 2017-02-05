@@ -1,0 +1,9 @@
+--- # COPY MODUE EXAMPLE
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Copy from the file directory test files
+      action: copy src=files/test4.txt dest=/home/sajj/test4.txt owner=sajj group=sajj mode=0655 backup=yes

@@ -1,0 +1,9 @@
+--- # Shell Module Example
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+   - name: Executing a remote command
+     shell: /usr/bin/uptime >> uptime.log

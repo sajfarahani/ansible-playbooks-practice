@@ -1,0 +1,11 @@
+--- # YUM PLAYBOOK EXAMPLE
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: same as yum update
+    action: yum name=dnf state=latest
+    
+
