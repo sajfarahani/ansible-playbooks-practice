@@ -1,0 +1,9 @@
+--- # Raw module Example
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Install the Apache
+      package: name=telnet state=latest

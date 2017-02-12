@@ -1,0 +1,9 @@
+--- # Raw module Example
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Get and Download the INI file from WebServere
+      get_url: url=http://website.com dest=/home/sajj/test.ini mode=0440
