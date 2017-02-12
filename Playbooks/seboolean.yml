@@ -1,0 +1,10 @@
+--- #SEBoolean Module
+- hosts: apacheweb
+  user: sajj
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks: 
+    - name: Change the boolean for Anonymous Writes on the Web Server
+      seboolean: name=httpd_anon_write state=yes
+  
